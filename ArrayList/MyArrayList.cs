@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DataStrucures
+namespace DataStructures
 {
     public class MyArrayList<T>
     {

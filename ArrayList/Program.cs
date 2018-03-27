@@ -1,28 +1,17 @@
 ﻿using System;
 
-namespace DataStrucures
+namespace DataStructures
 {
     class Program
-    {
+    {        
+        
         static void Main(string[] args)
         {
-            LinkedList<int> linkedList = new LinkedList<int>();
-            for (int i = 0; i < 10; i++)
-            {
-                linkedList.Add(i);
-                linkedList.Add(10);
-            }
-            
-            //linkedList.Print();
-            linkedList.Remove(5);
-            linkedList.Print();
-            linkedList.Remove(3);
-            linkedList.Print();
-            linkedList.RemoveAll(10);
-            linkedList.Print();
-            linkedList.RemoveAll(2);
-            linkedList.Print();
-            
+            BinaryTree<int> b = new BinaryTree<int>();
+
+            b.Add(10);
+            b.Add(12);
+            b.Add(9);
 
             Console.ReadLine();
         }
