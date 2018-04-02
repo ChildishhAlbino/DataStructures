@@ -1,17 +1,17 @@
 ﻿using System;
 namespace DataStructures
 {
-    public class MyArrayList<T>
+    public class TypedArrayList<T>
     {
         public int index = 0;
         public T[] array;
 
-        public MyArrayList()
+        public TypedArrayList()
         {
             array = new T[1];
         }
 
-        public MyArrayList(int size)
+        public TypedArrayList(int size)
         {
             array = new T[size];
         }
@@ -72,5 +72,22 @@ namespace DataStructures
             return array.Length;
         }
 
+        public bool Contains(T value)
+        {
+            for (int i = 0; i < GetSize()-1; i++)
+            {
+                if (array[i].Equals(value))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public virtual T this[int index]
+        {
+            get { return array[index]; }
+        }
     }
 }

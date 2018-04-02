@@ -49,7 +49,6 @@ namespace DataStructures
         {
             Remove(value, true);
         }
-
         private void Remove(T value, bool all)
         {
             Node temp;
@@ -69,7 +68,6 @@ namespace DataStructures
                 }
             }
         }
-
         public int Length()
         {
             int length = 0;
