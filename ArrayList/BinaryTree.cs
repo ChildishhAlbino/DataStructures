@@ -50,7 +50,12 @@ namespace DataStructures
                 }
             }
         }
-        public void Remove() { }
+        public void Remove()
+        {
+            // case 1: set parent's node pointer to null
+            // case 2: set parent's node point to delete node's single child
+            // case 3: FIND middle most value (leaf node) SET delete node's DATA to leaf node's data, CASE1(leaf node)
+        }
         public void RemoveAll() { }
 
         private void Remove(T value, bool All)
@@ -67,8 +72,13 @@ namespace DataStructures
         {
             if (node != null)
             {
-                Console.WriteLine($"Generation {node.Generation}: {node.data}");
-                if (node.left != null) { Print(node.left); }
+                if (node.left != null)
+                {
+                    Print(node.left);
+                }
+
+                Console.Write($"{node.data} ");
+
                 if (node.right != null)
                 {
                     Print(node.right);
@@ -79,6 +89,6 @@ namespace DataStructures
                 Console.WriteLine("done!");
             }
         }
-       
+
     }
 }

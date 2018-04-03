@@ -8,22 +8,11 @@ namespace DataStructures
 
         static void Main(string[] args)
         {
-            BinaryTree<int> b = new BinaryTree<int>();
+            HashMap<int> hashMap = new HashMap<int>();
+            hashMap.Add("oggod", 10);
+            hashMap.Add("doggo", -10);
 
-            for (int i = 0; i < 11; i++)
-            {
-                Random r = new Random();
-                ArrayList quicklist = new ArrayList();
-                int j = r.Next(0, 10);   
-                if (!quicklist.Contains(j))
-                {
-                    quicklist.Add(j);
-                    b.Add(j);
-                }
-
-            }
-
-            b.Print();
+            hashMap.Remove("doggo");
             Console.ReadLine();
         }
     }
