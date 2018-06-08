@@ -36,13 +36,24 @@ namespace DataStructures
         private int Hash(string key)
         {
             int index = 0;
-
+            int i = 0;
             foreach (char c in key)
             {
-                index += (c+1 ^ key.IndexOf(c));
-            }
+                i++;
+                int pseudorandom = c ^ i;
+                index += (int)Math.Pow(c, key.IndexOf(c) + 1) + i;
 
-            return index / (key.Length * 2);
+            }
+            int scramble = 0;
+            for (int j = 0; j < index.ToString().Length; j += 2)
+            {
+                if (j < index.ToString().Length)
+                {
+                    scramble += index.ToString()[j] * j;
+                }
+
+            }
+            return scramble;
         }
 
         private void Resize()

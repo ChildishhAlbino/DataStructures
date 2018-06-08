@@ -1,17 +1,20 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
 namespace DataStructures
 {
-    public class TypedArrayList<T>
+    public class ConnorArrayList<T>
     {
         public int index = 0;
         public T[] array;
 
-        public TypedArrayList()
+        public ConnorArrayList()
         {
             array = new T[1];
         }
 
-        public TypedArrayList(int size)
+        public ConnorArrayList(int size)
         {
             array = new T[size];
         }
@@ -38,6 +41,11 @@ namespace DataStructures
         public void Resize(int size)
         {
             Array.Resize(ref array, size);
+        }
+
+        public void Sort(IComparer<T> c)
+        {
+            Array.Sort(array, c);
         }
 
         public void Remove(T Value)
@@ -74,7 +82,7 @@ namespace DataStructures
 
         public bool Contains(T value)
         {
-            for (int i = 0; i < GetSize()-1; i++)
+            for (int i = 0; i < GetSize() - 1; i++)
             {
                 if (array[i].Equals(value))
                 {
@@ -85,9 +93,20 @@ namespace DataStructures
             return false;
         }
 
-        public virtual T this[int index]
+
+        public void Print()
         {
-            get { return array[index]; }
+            for (int i = 0; i < array.Length; i++)
+            {
+                try
+                {
+                    Console.WriteLine(array[i]);
+                }
+                catch (NullReferenceException)
+                {
+                    Console.WriteLine("Null");
+                }    
+            }
         }
     }
 }
